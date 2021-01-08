@@ -1,16 +1,17 @@
-import messagePayload from '../spongeqr-core/Payloads/messagePayload';
+import SpongeQR from '../spongeqr-core/SpongeQR';
+import { URL } from '../spongeqr-core/PayloadTypes/PayloadTypes';
 
 const RenderQR = () => {
+    const s = new SpongeQR();
 
-    const messagesadness = {text: 'pog'};
-    const m = new messagePayload(messagesadness);
-
-    const whateverHandleIt =()=>{
-        m.generateQR(document.getElementById('mycanvas') as HTMLCanvasElement);
+    const whateverHandleIt = () =>{
+        const thecanvas = document.getElementById('mycanvas') as HTMLCanvasElement;
+        const url = new URL('https://www.typescriptlang.org/docs/handbook/advanced-types.html');
+        s.generateQRFromPayload(url, thecanvas);
     }
 
     return(
-        <div>
+        <div style={{paddingLeft: '30px', paddingTop: '30px'}}>
             <canvas id="mycanvas" />
             <button onClick={whateverHandleIt}>Click this thing...</button>
         </div>
