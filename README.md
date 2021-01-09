@@ -1,7 +1,7 @@
 # SpongeQR-Web
 
 <p align="center">
-  <img width="200" height="200" src="./src/Assets/SpongeQR.png">
+  <img width="200" height="200" src="./src/assets/SpongeQR.png">
 </p>
 
 *A web application (written in Typescript based on React) version of the desktop based SpongeQR - QR Code Generator* 

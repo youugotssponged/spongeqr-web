@@ -1,35 +1,19 @@
 import QRCode from "qrcode";
-import {
-    PayloadNormal,
-    PayloadMultiFormat,
-    isPayloadMultiFormat,
-} from "../spongeqr-core/PayloadTypes/PayloadTypes";
+import { Payload } from "./PayloadTypes";
 class SpongeQR {
     public generateQRFromPayload(
-        payload: PayloadNormal | PayloadMultiFormat,
+        payload: Payload,
         canvas: HTMLCanvasElement,
         renderOptions?: QRCode.QRCodeRenderersOptions
     ): void {
-        if (isPayloadMultiFormat(payload)) {
-            payload.format();
-            QRCode.toCanvas(
-                canvas,
-                payload.data,
-                renderOptions ?? { scale: 10, margin: 0 },
-                (err) => {
-                    if (err) throw err;
-                }
-            );
-        } else {
-            QRCode.toCanvas(
-                canvas,
-                payload.data,
-                renderOptions ?? { scale: 10, margin: 0 },
-                (err) => {
-                    if (err) throw err;
-                }
-            );
-        }
+        QRCode.toCanvas(
+            canvas,
+            payload.data,
+            renderOptions ?? { scale: 10, margin: 0 },
+            (err) => {
+                if (err) throw err;
+            }
+        );
     }
 }
 
