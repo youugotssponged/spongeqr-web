@@ -40,8 +40,8 @@ export class WIFI implements PayloadMultiFormat {
         if (this.wifiData.length === 3) {
             this.data =
                 `WIFI:T:${this.wifiData[0]};` +
-                `S:${this.wifiData[1]}` +
-                `P:${this.wifiData[2]}`;
+                `S:${this.wifiData[1]};` +
+                `P:${this.wifiData[2]};`;
         } else {
             this.data = "";
         }
