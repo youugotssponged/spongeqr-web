@@ -1,5 +1,5 @@
 // Color Palette - spectrum from Purple to Aquamarine
-export const Colors = {
+const Colors = {
     Purple: '#7400B8',
     FrenchViolet: '#6930C3',
     SlateBlue: '#5E60CE',
@@ -11,3 +11,5 @@ export const Colors = {
     Turquoise: '#72EFDD',
     Aquamarine: '#80FFDB'
 };
+
+export default Colors;

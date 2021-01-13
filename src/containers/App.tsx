@@ -1,8 +1,9 @@
 import "./reset.css";
 import { Helmet } from "react-helmet";
+import Header from "../components/Header/Header";
+import RenderQR from "../components/RenderQR";
 
-import { URL, Message, WIFI, Email } from '../spongeqr-core/PayloadTypes';
-import RenderQR from '../components/RenderQR';
+import { Message } from "../spongeqr-core/PayloadTypes";
 
 const App = () => {
     return (
@@ -17,13 +18,17 @@ const App = () => {
                     rel="stylesheet"
                     href="https://fonts.googleapis.com/icon?family=Material+Icons"
                 />
+
+                {/* Google font - Potta One */}
+                <link rel="preconnect" href="https://fonts.gstatic.com" />
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap"
+                    rel="stylesheet"
+                />
             </Helmet>
-            
-            {/* Test - will remove later before implementing views/components */}
-            <RenderQR payload={new URL('https://www.linkedin.com/pulse/right-way-say-i-want-grow-engineering-interview-daniel-bean/?trk=eml-email_series_follow_newsletter_01-hero-1-title_link&midToken=AQGgXWoW5CzmbQ&fromEmail=fromEmail&ut=1aixkom3Mhw9A1   ')}/>
-            <RenderQR payload={new Message('Hello world')} />
-            <RenderQR payload={new WIFI({authType: 'WPA', ssid: 'WIFITHING', password: 'passwordispassword'})} />
-            <RenderQR payload={new Email({contact: 'fakeemail@email.com', subject: 'POG', message: 'Hello World'})} />
+
+            <Header />
+            <RenderQR payload={new Message("Hello SPONGEQR")} />;
         </>
     );
 };
