@@ -49,7 +49,7 @@ export const Nav = styled.div`
     }
 
     & h3 a:hover {
-        color: ${Colors.Purple};
+        color: yellow;
     }
 
     & h3 a:link, a:visited {

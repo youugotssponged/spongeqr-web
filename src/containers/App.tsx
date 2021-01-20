@@ -1,9 +1,9 @@
 import "./reset.css";
 import { Helmet } from "react-helmet";
-import Header from "../components/Header/Header";
-import RenderQR from "../components/RenderQR";
 
-import { Message } from "../spongeqr-core/PayloadTypes";
+import Header from "../components/Header/Header";
+import Body from "../components/Body/Body";
+
 
 const App = () => {
     return (
@@ -28,7 +28,11 @@ const App = () => {
             </Helmet>
 
             <Header />
-            <RenderQR payload={new Message("Hello SPONGEQR")} />;
+
+            <Body />
+
+
+            {/**<RenderQR payload={new Message("Hello SPONGEQR")} />;**/}
         </>
     );
 };

@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
-import SpongeQR from '../spongeqr-core/SpongeQR';
-import { Payload } from '../spongeqr-core/PayloadTypes';
+import SpongeQR from '../../spongeqr-core/SpongeQR';
+import { Payload } from '../../spongeqr-core/PayloadTypes';
 
 const RenderQR = (props: { payload:  Payload}) => {
     const spongeQR = new SpongeQR();
@@ -20,7 +20,7 @@ const RenderQR = (props: { payload:  Payload}) => {
 
     return(
         <div style={{paddingLeft: '100px', paddingTop: '100px'}}>
-            <canvas ref={renderCanvas} />
+            <canvas ref={renderCanvas} style={{width: "200px", height: "200px"}} />
             <button onClick={renderClickHandler}>Generate QR</button>
         </div>
     );
